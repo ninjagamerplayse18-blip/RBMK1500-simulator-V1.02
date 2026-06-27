@@ -7,7 +7,7 @@
 --local page6 = require("6CON&C") -- copy and paste for all of the 10 pages
 --local page7 = require("7MISK") -- copy and paste for all of the 10 pages
 --local page8 = require("8GRID") -- copy and paste for all of the 10 pages
-local page00 = require("00debugtest") -- copy and paste for all of the 10 pages
+local page00 = require("scr.00debugtest") -- copy and paste for all of the 10 pages
 
 
 local activePage = nil --change this to 0startup later
