@@ -7,11 +7,28 @@
 --local page6 = require("6CON&C") -- copy and paste for all of the 10 pages
 --local page7 = require("7MISK") -- copy and paste for all of the 10 pages
 --local page8 = require("8GRID") -- copy and paste for all of the 10 pages
-local page00 = require("scr.00debugtest") -- copy and paste for all of the 10 pages
+local page00 = require("scr.00debugtest") 
+local activePage = nil               
 
+-- 2. CREATE THE GLOBAL CHANNEL MATRIX (FIXES THE CRASH) ai
+channel = {} -- This initializes the global table so page00 can see it!
+for r = 1, 3 do
+    channel[r] = {}
+    for c = 1, 9 do
+        -- Fill the grid with various cell types for visual testing
+        if (r + c) % 3 == 0 then
+            channel[r][c] = { type = "fuelchannel", temperature = 280, power = 4.2 }
+        elseif r == 2 then
+            channel[r][c] = { type = "rr", power = 0.45 }
+        elseif r == 3 then
+            channel[r][c] = { type = "ar", power = 0.75 }
+        else
+            channel[r][c] = { type = "ghost" }
+        end
+    end
+end
 
-local activePage = nil --change this to 0startup later
-
+-- Track total seconds passed since the game started
 local time = 0
 
 function love.update(dt)
@@ -32,7 +49,9 @@ function love.draw()
     if activePage ~= nil then
         love.graphics.push()
         love.graphics.translate(0, 40) 
+        
         activePage.draw() 
+        
         love.graphics.pop()
     end
 end
