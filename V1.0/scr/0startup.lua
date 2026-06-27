@@ -1,0 +1,1 @@
+--page 0, startup, containing: load, new and info

@@ -1,0 +1,1 @@
+--page 7, offline cooling and emergency systems, including PCS, DW tank, regenerators, polishers, aux deaerator makup and ofc my beloved ECCS

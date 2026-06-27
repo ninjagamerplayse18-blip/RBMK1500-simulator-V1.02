@@ -1,0 +1,1 @@
+--page 1, main core, congaing: rod selection, simpiler all alarms, core output, simple flow displays, auto rods (AR/LAR), modern Skala system, MTK, rod positions
